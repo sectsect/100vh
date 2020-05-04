@@ -30,6 +30,15 @@ function onResize (cb) {
   handler()
 }
 
+/**
+ * setProperty function
+ *
+ * @void
+ */
+const setProp = (h) => {
+  document.documentElement.style.setProperty('--vh', `${h}px`)
+  window.vh = h
+}
 
 /**
  * Main execution function
@@ -39,11 +48,15 @@ function onResize (cb) {
 function main (width, height, e) {
   requestAnimationFrame(function () {
     var changedOrientation = e && e.type === 'orientationchange'
+    var resize = e && e.type === 'resize'
 
     if (!isMobile() || changedOrientation || changedOrientation === undefined) {
       var calculatedHeight = changedOrientation ? width : height
-      document.documentElement.style.setProperty('--vh', `${calculatedHeight}px`)
-      window.vh = calculatedHeight
+      setProp(calculatedHeight)
+    }
+    if (!isMobile() || resize || resize === undefined) {
+      var calculatedHeight = height
+      setProp(calculatedHeight)
     }
   })
 }
@@ -54,4 +67,3 @@ function init () {
 }
 
 export default { init }
-
