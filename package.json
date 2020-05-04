@@ -2,9 +2,13 @@
   "name": "@sect/100vh",
   "version": "1.1.0",
   "description": "Lightweight JS package for easy overcoming the problem with 100vh on mobile devices",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -22,5 +26,17 @@
   "bugs": {
     "url": "https://github.com/sectsect/100vh/issues"
   },
-  "homepage": "https://github.com/sectsect/100vh#readme"
+  "homepage": "https://github.com/sectsect/100vh#readme",
+  "devDependencies": {
+    "@spotify/prettier-config": "^7.0.0",
+    "@spotify/tsconfig": "^7.0.0",
+    "prettier": "^2.0.5",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.9.6",
+    "ismobilejs": "^1.1.1"
+  }
 }
