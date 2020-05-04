@@ -7,14 +7,14 @@
 Lightweight JS package for easy overcoming the problem with 100vh on mobile devices :iphone:
 
 ## How does it work?
-It creates the CSS variable called `--vh` at the `<html>` tag and `vh` variable in the `window`, which is changed only on orientation change and stays still during scroll. This will prevent the page "jumping" on scroll, which leads to bad user experience.<br>
+It creates the CSS variable called `--vh` at the `<html>` tag and `vh` variable in the `window`, which is changed on orientation change & **`resize` event** and stays still during scroll. This will prevent the page "jumping" on scroll, which leads to bad user experience.<br>
 ##### Important note:
 This will stay still only on mobile devices, on desktop the value changes together with the viewport. That means that it can be used on any resolution and there is no need for additional css media queries.
 
 ## Installation
 Install package in your project 
 ```bash
-npm i @sparing-software/100vh
+npm i @sect/100vh
 ```
 
 ## Initialization
@@ -22,9 +22,9 @@ Import the package and run the init function at the page start.<br>
 (for Nuxt.js/Vue app it can be initialized in plugins, if you're using other technology – init the script above all the other code)
 
 ```js
-import vh from '@sparing-software/100vh'
+import vh from '@sect/100vh';
 
-vh.init()
+vh.init();
 ```
 
 ## Examples
@@ -36,7 +36,7 @@ CSS
 ```
 JS
 ```js
-window.querySelectorAll('section').style.height = window.vh
+window.querySelectorAll('section').style.height = window.vh;
 ```
 
 ## Contributing
