@@ -1,5 +1,5 @@
 {
-  "name": "@sparing-software/100vh",
+  "name": "@sect/100vh",
   "version": "1.1.0",
   "description": "Lightweight JS package for easy overcoming the problem with 100vh on mobile devices",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SparingSoftware/100vh.git"
+    "url": "git+https://github.com/sectsect/100vh.git"
   },
   "keywords": [
     "js",
@@ -17,10 +17,10 @@
     "package",
     "mobile"
   ],
-  "author": "SparingSoftware",
+  "author": "SECT",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SparingSoftware/100vh/issues"
+    "url": "https://github.com/sectsect/100vh/issues"
   },
-  "homepage": "https://github.com/SparingSoftware/100vh#readme"
+  "homepage": "https://github.com/sectsect/100vh#readme"
 }
