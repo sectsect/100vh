@@ -35,8 +35,8 @@ function onResize (cb) {
  *
  * @void
  */
-const setProp = (h) => {
-  document.documentElement.style.setProperty('--vh', `${h}px`)
+var setProp = (h) => {
+  document.documentElement.style.setProperty('--vh', h + 'px')
   window.vh = h
 }
 
