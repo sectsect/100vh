@@ -1,8 +1,6 @@
-# 100vh
+# @sect/100vh
 
 [![MIT license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/SparingSoftware/nuxt-sparing-center/blob/master/LICENSE)
-[![Downloads number](https://img.shields.io/npm/dt/@sparing-software/100vh.svg)](https://www.npmjs.com/package/@sparing-software/100vh)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 Lightweight JS package for easy overcoming the problem with 100vh on mobile devices :iphone:
 
