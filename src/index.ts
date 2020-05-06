@@ -12,7 +12,7 @@ declare global {
  *
  * @arg cb {Event}
  */
-function onResize (cb: any) {
+const onResize = (cb: any) => {
   // Create resize handler
   function handler (e: Event) {
     return cb(window.innerWidth, window.innerHeight, e);
@@ -26,28 +26,39 @@ function onResize (cb: any) {
   handler(cb);
 }
 
+/**
+ * setProperty function
+ *
+ * @void
+ */
+const setProp = (h: number) => {
+  document.documentElement.style.setProperty('--vh', `${h}px`);
+  window.vh = h;
+}
 
 /**
  * Main execution function
  *
  * @void
  */
-function main (width: number, height: number, e: Event) {
-  requestAnimationFrame(() => {
+const main = (width: number, height: number, e: Event) => {
+  requestAnimationFrame(function () {
     const changedOrientation = e && e.type === 'orientationchange';
-
-    if (!isMobile().phone || changedOrientation || changedOrientation === undefined) {
+    const resize = e && e.type === 'resize';
+    if (!isMobile().any || changedOrientation || changedOrientation === undefined) {
       const calculatedHeight = changedOrientation ? width : height;
-      document.documentElement.style.setProperty('--vh', `${calculatedHeight}px`);
-      window.vh = calculatedHeight;
+      setProp(calculatedHeight);
+    }
+    if (!isMobile().any || resize || resize === undefined) {
+      const calculatedHeight = height;
+      setProp(calculatedHeight);
     }
   })
 }
 
 // Fire main function with resize listeners
-function init () {
+const init = () => {
   onResize(main);
 }
 
 export default { init };
-
