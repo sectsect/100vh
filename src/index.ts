@@ -45,6 +45,8 @@ const main = (width: number, height: number, e: Event) => {
   requestAnimationFrame(function () {
     const changedOrientation = e && e.type === 'orientationchange';
     const resize = e && e.type === 'resize';
+
+    setProp(height);
     if (!isMobile().any || changedOrientation || changedOrientation === undefined) {
       const calculatedHeight = changedOrientation ? width : height;
       setProp(calculatedHeight);
