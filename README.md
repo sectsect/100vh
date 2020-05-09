@@ -25,6 +25,17 @@ import vh from '@sect/100vh';
 vh.init();
 ```
 
+## Browser:
+
+```html
+<!-- Include 100vh from dist -->
+<script src="dist/100vh.umd.js"></script>
+<!-- Initialize (you can do this whenever you want) -->
+<script>
+vh.init();
+</script>
+```
+
 ## Examples
 CSS
 ```css

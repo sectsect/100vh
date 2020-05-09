@@ -2,12 +2,16 @@
   "name": "@sect/100vh",
   "version": "1.1.1",
   "description": "Lightweight JS package for easy overcoming the problem with 100vh on mobile devices",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
+  "main": "dist/100vh.js",
+  "module": "dist/100vh.mjs",
+  "unpkg": "dist/100vh.umd.js",
+  "types": "dist/100vh.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "build": "microbundle --format es,cjs,umd --no-sourcemap --external none",
+    "dev": "microbundle watch --format es,cjs,umd --no-sourcemap --external none",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\" \"src/**/*.mjs\"",
     "lint": "tslint -p tsconfig.json"
   },
   "repository": {
@@ -30,6 +34,7 @@
   "devDependencies": {
     "@spotify/prettier-config": "^7.0.0",
     "@spotify/tsconfig": "^7.0.0",
+    "microbundle": "^0.12.0",
     "prettier": "^2.0.5",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
