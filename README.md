@@ -2,7 +2,10 @@
 
 [![MIT license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/SparingSoftware/nuxt-sparing-center/blob/master/LICENSE)
 
-Lightweight JS package for easy overcoming the problem with 100vh on mobile devices :iphone:
+Lightweight JS package for easy overcoming the problem with 100vh on mobile devices :iphone:  
+
+A solution to the menu bar problem on iOS Safari with dynamic height.  
+Read ["The iOS Safari menu bar is hostile to web apps: discuss"](https://benfrain.com/the-ios-safari-menu-bar-is-hostile-to-web-apps-discuss/).
 
 ## How does it work?
 It creates the CSS variable called `--vh` at the `<html>` tag and `vh` variable in the `window`, which is changed on orientation change & **`resize` event** and stays still during scroll. This will prevent the page "jumping" on scroll, which leads to bad user experience.<br>
@@ -39,7 +42,7 @@ vh.init();
 ## Examples
 CSS
 ```css
-.section {
+section {
   height: var(--vh);
 }
 ```
